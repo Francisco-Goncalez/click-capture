@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 import ClickCapture from "./ClickCapture";
 import logo from './logo.svg';
 import './App.css';
@@ -16,7 +16,7 @@ function App() {
           Clique no botao abaixo e veja o  alerta na tela.
         </p>
         <ClickCapture>
-        <button onClick={()=> executaClick()}>Executa</button>
+          <button onClick={()=> executaClick()}>Executa</button>
         </ClickCapture>
       </header>
     </div>

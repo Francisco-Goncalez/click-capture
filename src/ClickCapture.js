@@ -1,11 +1,21 @@
 import React, { Fragment } from 'react';
 
-const ClickCaptureFunc = (props) => {
+export default (props) => {
+
+  // alterne o valor de retorno da função entre false e true e veja o resultado na execução
+  const condicao = () => {
+    return true;
+  };
 
   const executaAntes = () => {
-    alert("Executou onClick do clone");
-    props.children.props.onClick();
-  }
+    // Testa uma condição e caso seja verdadeira executa a função onClick
+    // original do componente filho se não uma executa função anternativa
+    if (condicao() === true) {
+      props.children.props.onClick();
+    } else {
+      alert("Executou onClick do clone");
+    }
+  };
 
   const renderChildren = () => {
     return React.Children.map(props.children, clone => {
@@ -15,7 +25,5 @@ const ClickCaptureFunc = (props) => {
     });
   }
 
-    return <Fragment>{renderChildren()}</Fragment>
+  return <Fragment>{renderChildren()}</Fragment>
 }
-
-export default ClickCaptureFunc;
