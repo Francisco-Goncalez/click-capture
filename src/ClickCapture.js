@@ -4,7 +4,7 @@ export default (props) => {
 
   // alterne o valor de retorno da função entre false e true e veja o resultado na execução
   const condicao = () => {
-    return true;
+    return false;
   };
 
   const executaAntes = () => {
